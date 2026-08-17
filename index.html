@@ -1,33 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Connect to Our Minecraft Server</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
-  h1 { color: #2e7d32; }
-  code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
-  .box { background: #f6fff6; border: 1px solid #cde; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
-</style>
+    <meta charset="UTF-8">
+    <title>Connect to the Minecraft Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Instructions for connecting to the mc.mulek.cc Minecraft server">
+    <style>
+        :root {
+            --bg: #0f1115;
+            --surface: #161922;
+            --surface-2: #1e222d;
+            --border: #2a2f3d;
+            --text: #e6e8eb;
+            --text-dim: #9aa0ac;
+            --accent: #5eead4;
+            --accent-dim: #134e4a;
+            --radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+            line-height: 1.65;
+        }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 0 0 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 40px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 24px 0 10px;
+            color: var(--accent);
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        p.dim {
+            color: var(--text-dim);
+            font-size: 0.92rem;
+        }
+
+        code {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            padding: 2px 7px;
+            border-radius: 6px;
+            font-size: 0.92em;
+            font-family: "SF Mono", Menlo, Consolas, monospace;
+            color: var(--accent);
+        }
+
+        .quickstart {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .quickstart-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .quickstart-row .label {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .quickstart-row code {
+            font-size: 1rem;
+            padding: 4px 10px;
+        }
+
+        .copy-hint {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        ol, ul {
+            padding-left: 22px;
+            margin: 12px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            margin: 16px 0;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tab-label {
+            display: inline-block;
+            background: var(--accent-dim);
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 56px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 16px 60px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .quickstart-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Connect to the Minecraft Server</h1>
-  <div class="box">
-    <p><strong>Server Address:</strong> <code>minecraft.mulek.cc</code></p>
-    <p><strong>Port:</strong> <code>25565</code></p>
-    <p><strong>Version:</strong> 26.2</p>
-  </div>
 
-  <h2>Java Edition</h2>
-  <ol>
-    <li>Open Minecraft, click <strong>Multiplayer</strong>.</li>
-    <li>Click <strong>Add Server</strong>.</li>
-    <li>Enter <code>minecraft.mulek.cc</code> as the server address.</li>
-    <li>Click <strong>Done</strong>, then double-click the server to join.</li>
-  </ol>
+    <header>
+        <h1>Connect to the Minecraft Server</h1>
+        <p class="subtitle">Everything you need to join, in two minutes or less.</p>
+    </header>
 
-  <h2>Need help?</h2>
-  <p>Message me if you have trouble connecting.</p>
+    <section class="quickstart">
+        <div class="quickstart-row">
+            <span class="label">Server Address</span>
+            <code>mc.mulek.cc</code>
+        </div>
+        <div class="quickstart-row">
+            <span class="label">Edition</span>
+            <code>Java</code>
+        </div>
+        <div class="quickstart-row">
+            <span class="label">Version</span>
+            <code>26.2</code>
+        </div>
+        <p class="copy-hint">Port is not required in the address.</p>
+    </section>
+
+    <h2>Quick Start</h2>
+    <p>Already have Minecraft Java Edition installed?</p>
+    <ol>
+        <li>Open Minecraft &rarr; <strong>Multiplayer</strong></li>
+        <li><strong>Add Server</strong></li>
+        <li>Server address: <code>mc.mulek.cc</code></li>
+        <li><strong>Done</strong>, then double-click the server to join</li>
+    </ol>
+
+    <h2>Detailed Guide</h2>
+
+    <h3>1. Get Minecraft Java Edition</h3>
+    <div class="card">
+        <p>If you don't already own Minecraft, purchase and download the Java &amp; Bedrock Edition bundle from the official site:</p>
+        <p><a href="https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc" target="_blank" rel="noopener">minecraft.net &rarr; Java &amp; Bedrock Edition (PC)</a></p>
+        <p class="dim">Note: this server currently supports Java Edition only. Bedrock (mobile/console) is not supported.</p>
+    </div>
+
+    <div class="card">
+        <p><strong>Already own it?</strong> Install the launcher:</p>
+        <ol>
+            <li>Go to <a href="https://www.minecraft.net/en-us/download" target="_blank" rel="noopener">minecraft.net/download</a></li>
+            <li>Download the Minecraft Launcher for your OS (Windows, macOS, or Linux)</li>
+            <li>Run the installer and sign in with your Microsoft account</li>
+        </ol>
+    </div>
+
+    <h3>2. Launch the correct version</h3>
+    <div class="card">
+        <p>This server runs version <code>26.2</code>. If your launcher opens a different version by default:</p>
+        <ol>
+            <li>In the Minecraft Launcher, click the dropdown next to the <strong>Play</strong> button</li>
+            <li>Select <strong>Installations</strong> &rarr; <strong>New Installation</strong></li>
+            <li>Choose version <code>26.2</code> from the version list, name it, and create it</li>
+            <li>Select that installation before clicking <strong>Play</strong></li>
+        </ol>
+        <p class="dim">Mismatched versions are the most common reason people can't connect.</p>
+    </div>
+
+    <h3>3. Add the server</h3>
+    <div class="card">
+        <ol>
+            <li>From the main menu, click <strong>Multiplayer</strong></li>
+            <li>Click <strong>Add Server</strong></li>
+            <li>Server Name: anything you like, or leave it blank</li>
+            <li>Server Address: <code>mc.mulek.cc</code></li>
+            <li>Click <strong>Done</strong></li>
+            <li>Double-click the server entry in your list to join</li>
+        </ol>
+    </div>
+
+    <h3>Troubleshooting</h3>
+    <div class="card">
+        <ul>
+            <li><strong>"Can't connect to server"</strong> — double check the address is exactly <code>mc.mulek.cc</code> with no extra spaces</li>
+            <li><strong>"Outdated server/client"</strong> — your Minecraft version doesn't match; see step 2 above</li>
+            <li><strong>Connects but times out or hangs</strong> — server may be restarting, wait a minute and try again</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Still stuck? Message me directly and I'll help you get connected.</p>
+    </footer>
+
 </body>
 </html>
